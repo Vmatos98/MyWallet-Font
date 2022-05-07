@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect} from "react";
+import {Link, useNavigate } from 'react-router-dom';
 
 import Container from "../Style/Container"
 
@@ -21,7 +22,9 @@ function Login(){
                 <br></br>
                 <button disabled={(!(data.email && data.password)||disable)?true:false} type="submit">Entrar</button> 
             </form>
-            <p>Primeira vez? Cadastre-se!</p>
+            <Link style={{ textDecoration: 'none', color: 'white' }} to="/signup">
+                <p>Primeira vez? Cadastre-se!</p>
+            </Link>
         </Container>
     );
 }

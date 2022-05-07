@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Container = styled.div `
 color: white;
 position: absolute;
@@ -17,6 +16,7 @@ display: flex;
 flex-direction: column;
 /* justify-content: center; */
 align-items: center;
+text-decoration: none;
 h1{
     font-family: 'Saira Stencil One';
     font-weight: 400;
@@ -70,7 +70,35 @@ form{
         opacity: 0.7;
     }
     p{
-        font-family: 'Raleway';
+        position: relative;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    margin-top:25px;
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.976px;
+    line-height: 17px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: white;
+    }
+    a{
+        text-decoration: none;
+        text-decoration-color: #FFFFFF;
+        text-decoration-line: underline;
+        color: white;
+    }
+    a:active{
+        text-decoration: none;
+        
+    }
+    Link{
+        text-decoration: none;
+    
+        color: white;
     }
 }
 

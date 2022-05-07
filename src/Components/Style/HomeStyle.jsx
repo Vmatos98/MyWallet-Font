@@ -93,36 +93,42 @@ max-width: 500px;
 display: flex;
 flex-wrap: wrap;
 justify-content:space-between;
-button{
+
+a{
     position: relative;
     width: 47%;
-    height: 100%;
     border-radius:10px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 17px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    
     padding: 6px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    ion-icon{
+    background: #3E0850;
+    button{
+        background: #3E0850;
+        height: 100%;
+        border-radius:10px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
         font-size: 17px;
-        position: relative;
-        justify-content: start;
-        /* top:0; */
-        /* transform: translate(0,-100%); */
-        /* margin-bottom: 10px; */
-    }
-    p{
-        text-align: left;
-        height: 80%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        text-align: left;
+        ion-icon{
+            font-size: 17px;
+            position: relative;
+            justify-content: start;
+            color: white;
+            /* top:0; */
+            /* transform: translate(0,-100%); */
+            /* margin-bottom: 10px; */
+        }
+        p{
+            text-align: left;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            color: white;
+        }
     }
 }
+
 `;
