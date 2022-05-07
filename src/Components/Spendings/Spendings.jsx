@@ -2,7 +2,7 @@ import { useState, useContext, useEffect} from "react";
 
 import IncomeStyle from "../Style/Incomes_Spending"
 import {Top, Container} from '../Style/HomeStyle';
-function NewIncome(){
+function NewSpending(){
     const [data, setData] = useState({
         value:'',
         description:''
@@ -15,7 +15,7 @@ function NewIncome(){
         <>
         <Container>
         <Top>
-            <h1>Nova entrada</h1>
+            <h1>Nova saída</h1>
         </Top>
         <IncomeStyle>
             <form onSubmit={postData}>
@@ -23,11 +23,11 @@ function NewIncome(){
                 <br></br>
                 <input type="text" value={data.description} disabled = {disable?true:false} placeholder="Descrição" onChange={e => setData({...data ,password :e.target.value})} required/>
                 <br></br>
-                <button disabled={(!(data.value && data.description)||disable)?true:false} type="submit">Salvar entrada</button> 
+                <button disabled={(!(data.value && data.description)||disable)?true:false} type="submit">Salvar saída</button> 
             </form>
         </IncomeStyle>
         </Container>
         </>
     );
 }
-export default NewIncome;
+export default NewSpending;
