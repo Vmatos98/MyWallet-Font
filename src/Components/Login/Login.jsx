@@ -1,9 +1,12 @@
-import { useState, useContext, useEffect} from "react";
+import { useState, useEffect} from "react";
 import {Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import Container from "../Style/Container"
 
 function Login(){
+    const navigate = useNavigate();
+    const URL = process.env.REACT_APP_URL;
     const [data, setData] = useState({
         email:'',
         password:''
@@ -11,6 +14,15 @@ function Login(){
     const [disable, setDisable] = useState(false);
     function postData(e){
         setDisable(!disable);
+        e.preventDefault();
+        const promise = axios.post(`${URL}/sig-in`, data);
+        promise.then(res => {
+            console.log(res.data);
+            sessionStorage.setItem('token', JSON.stringify(res.data));
+            navigate('/home');
+        }).catch(err => {
+            console.log(err);
+        })
     }
     return (
         <Container>

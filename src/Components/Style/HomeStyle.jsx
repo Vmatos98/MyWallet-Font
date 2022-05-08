@@ -76,8 +76,55 @@ div{
         color: #868686;
         padding: 50px;
     }
+    ul{
+        height: 96%;
+        padding-bottom: 35px;
+        overflow: auto;
+
+    li{
+        display: flex;
+        align-items: initial;
+        justify-content: space-between;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 25px;
+        
+        p2{
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            display: flex;
+            width: 70%;
+            padding-left: 5%;
+            justify-content: flex-start;
+        }
+    }
+    }
+    h2{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        position: absolute;
+        bottom: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background: white;
+        span{
+            color: #03AC00;
+        }
+    }
+
 }
 
+`;
+export const P = styled.p `
+    font-family: 'Raleway';
+    display: flex;
+    width: 15%;
+    color: ${(props) => (props.model===`date`?`#C6C6C6`: props.model===`green`?`#03AC00`:`#C70000`)};
 `;
 export const Bottom= styled.div `
 position: absolute;

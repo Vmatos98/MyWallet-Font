@@ -1,19 +1,37 @@
 import { useState, useContext, useEffect} from "react";
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
 
 import IncomeStyle from "../Style/Incomes_Spending"
 import {Top, Container} from '../Style/HomeStyle';
+
 function NewIncome(){
+    const URL = process.env.REACT_APP_URL;
     const [data, setData] = useState({
         value:'',
-        description:''
+        description:'',
+        type:'entrada'
     });
+    
+    const token = JSON.parse(sessionStorage.getItem('token'));
+    const config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
     const navigate = useNavigate();
     const [disable, setDisable] = useState(false);
     function postData(e){
+        setData({...data ,type :'entrada'});
         setDisable(!disable);
-        navigate('/home');
+        e.preventDefault();
+        const promise = axios.post(`${URL}/new_transaction`, data, config);
+        promise.then(res => {
+            console.log(res.data);
+            navigate('/home');
+        }).catch(err => {
+            console.log(err);
+        })
     }
+    
     return (
         <>
         <Container>

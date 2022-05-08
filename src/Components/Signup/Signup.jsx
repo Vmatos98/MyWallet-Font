@@ -1,10 +1,13 @@
-import { useState, useContext, useEffect} from "react";
+import { useState, useEffect} from "react";
 import {Link, useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 import Container from "../Style/Container"
 
 
 function Signup(){
+    const navigate = useNavigate();
+    const URL = process.env.REACT_APP_URL;
+    console.log("url: ",URL);
     const [data, setData] = useState({
         email:'',
         password:'',
@@ -15,6 +18,13 @@ function Signup(){
     function postData(e){
         e.preventDefault();
         setDisable(true);
+        const promise = axios.post(`${URL}/sign-up`, data);
+        promise.then(res => {
+            console.log(res.data);
+            navigate('/');
+        }).catch(err => {
+            console.log(err);
+        })
     }
     return(
         <Container>
