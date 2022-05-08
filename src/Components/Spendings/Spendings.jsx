@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect} from "react";
+import { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ function NewSpending(){
     const [disable, setDisable] = useState(false);
     const navigate = useNavigate();
     function postData(e){
-        setData({...data ,type :"entrada"});
+        
         setDisable(!disable);
         e.preventDefault();
         const promise = axios.post(`${URL}/new_transaction`, data, config);
@@ -26,7 +26,8 @@ function NewSpending(){
             console.log(res.data);
             navigate('/home');
         }).catch(err => {
-            console.log(err);
+            alert("Ocorreu um error ao criar a transação: " + err.response.data.error);
+            navigate('/home');
         })
     }
     return (
