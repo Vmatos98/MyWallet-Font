@@ -23,7 +23,7 @@ function Home(){
                 const {data} = await axios.get(`${URL}statement`, config);
                 setIncomes(data);
             }catch (error) {
-                // alert("Ocorreu um error ao carregar os dados");
+                alert("Ocorreu um error ao carregar os dados");
             }
         }
         getData();

@@ -22,6 +22,7 @@ function Login(){
             navigate('/home');
         }).catch(err => {
             console.log(err);
+            alert("Ocorreu um error ao fazer login: Verifique seu email e senha e tente novamente" );
         })
     }
     return (
