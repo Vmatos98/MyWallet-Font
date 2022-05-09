@@ -17,11 +17,9 @@ function Login(){
         e.preventDefault();
         const promise = axios.post(`${URL}sig-in`, data);
         promise.then(res => {
-            console.log(res.data);
             sessionStorage.setItem('token', JSON.stringify(res.data));
             navigate('/home');
         }).catch(err => {
-            console.log(err);
             alert("Ocorreu um error ao fazer login: Verifique seu email e senha e tente novamente" );
         })
     }

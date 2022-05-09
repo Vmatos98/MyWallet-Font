@@ -9,7 +9,6 @@ function Home(){
     const navigate = useNavigate();
     const URL = process.env.REACT_APP_URL ||'https://mywallet-backand.herokuapp.com/';
     const [incomes, setIncomes] = useState([]);
-    console.log(incomes);
     const token = JSON.parse(sessionStorage.getItem('token'));
     const config = {
         headers: { authorization: `Bearer ${token}` }
@@ -34,7 +33,6 @@ function Home(){
         
         const promise = axios.post(`${URL}sign-out`, "", config);
         promise.then(res => {
-            console.log(res.data);
             sessionStorage.removeItem('token');
             navigate('/');
         }).catch(err => {
@@ -54,7 +52,6 @@ function Home(){
         };
         const promise = axios.delete(`${URL}delete_value`, header);
         promise.then(res => {
-            console.log(res.data);
             document.location.reload(true);
         }).catch(err => {
             alert("Ocorreu um error ao deletar: " + err.response.data.error);

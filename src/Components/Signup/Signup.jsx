@@ -21,11 +21,10 @@ function Signup(){
         setDisable(true);
         const promise = axios.post(`${URL}sign-up`, data);
         promise.then(res => {
-            console.log(res.data);
             navigate('/');
         }).catch(err => {
-            console.log(err);
             alert(err.response.data.error);
+            document.location.reload(true);
         })
     }
     return(

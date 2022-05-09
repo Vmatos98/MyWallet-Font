@@ -28,7 +28,7 @@ function NewIncome(){
             console.log(res.data);
             navigate('/home');
         }).catch(err => {
-            console.log(err);
+            alert("Ocorreu um error ao criar a transação: " + err.response.data.error);
         })
     }
     
