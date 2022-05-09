@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect} from "react";
+import { useState } from "react";
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
@@ -6,7 +6,7 @@ import IncomeStyle from "../Style/Incomes_Spending"
 import {Top, Container} from '../Style/HomeStyle';
 
 function NewIncome(){
-    const URL = process.env.REACT_APP_URL;
+    const URL = process.env.REACT_APP_URL||'https://mywallet-backand.herokuapp.com/';
     const [data, setData] = useState({
         value:'',
         description:'',
@@ -23,7 +23,7 @@ function NewIncome(){
         setData({...data ,type :'entrada'});
         setDisable(!disable);
         e.preventDefault();
-        const promise = axios.post(`${URL}/new_transaction`, data, config);
+        const promise = axios.post(`${URL}new_transaction`, data, config);
         promise.then(res => {
             console.log(res.data);
             navigate('/home');

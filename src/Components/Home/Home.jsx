@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Home(){
     const navigate = useNavigate();
-    const URL = process.env.REACT_APP_URL;
+    const URL = process.env.REACT_APP_URL ||'https://mywallet-backand.herokuapp.com/';
     const [incomes, setIncomes] = useState([]);
     console.log(incomes);
     const token = JSON.parse(sessionStorage.getItem('token'));
@@ -20,7 +20,7 @@ function Home(){
         }
         const getData = async() =>{
             try {
-                const {data} = await axios.get(`${URL}/statement`, config);
+                const {data} = await axios.get(`${URL}statement`, config);
                 setIncomes(data);
             }catch (error) {
                 // alert("Ocorreu um error ao carregar os dados");
@@ -32,7 +32,7 @@ function Home(){
 
     function logOut(){
         
-        const promise = axios.post(`${URL}/sign-out`, "", config);
+        const promise = axios.post(`${URL}sign-out`, "", config);
         promise.then(res => {
             console.log(res.data);
             sessionStorage.removeItem('token');
@@ -52,7 +52,7 @@ function Home(){
                 id: id
             }
         };
-        const promise = axios.delete(`${URL}/delete_value`, header);
+        const promise = axios.delete(`${URL}delete_value`, header);
         promise.then(res => {
             console.log(res.data);
             document.location.reload(true);

@@ -7,7 +7,7 @@ import {Container, P1} from "../Style/Container"
 
 function Signup(){
     const navigate = useNavigate();
-    const URL = process.env.REACT_APP_URL;
+    const URL = process.env.REACT_APP_URL||'https://mywallet-backand.herokuapp.com/';
     console.log("url: ",URL);
     const [data, setData] = useState({
         email:'',
@@ -19,7 +19,7 @@ function Signup(){
     function postData(e){
         e.preventDefault();
         setDisable(true);
-        const promise = axios.post(`${URL}/sign-up`, data);
+        const promise = axios.post(`${URL}sign-up`, data);
         promise.then(res => {
             console.log(res.data);
             navigate('/');

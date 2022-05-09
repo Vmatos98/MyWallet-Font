@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import {Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -15,7 +15,7 @@ function Login(){
     function postData(e){
         setDisable(!disable);
         e.preventDefault();
-        const promise = axios.post(`${URL}/sig-in`, data);
+        const promise = axios.post(`${URL}sig-in`, data);
         promise.then(res => {
             console.log(res.data);
             sessionStorage.setItem('token', JSON.stringify(res.data));

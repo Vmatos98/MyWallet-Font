@@ -5,7 +5,7 @@ import axios from 'axios';
 import IncomeStyle from "../Style/Incomes_Spending"
 import {Top, Container} from '../Style/HomeStyle';
 function NewSpending(){
-    const URL = process.env.REACT_APP_URL;
+    const URL = process.env.REACT_APP_URL||'https://mywallet-backand.herokuapp.com/';
     const token = JSON.parse(sessionStorage.getItem('token'));
     const [data, setData] = useState({
         value:'',
@@ -21,7 +21,7 @@ function NewSpending(){
         
         setDisable(!disable);
         e.preventDefault();
-        const promise = axios.post(`${URL}/new_transaction`, data, config);
+        const promise = axios.post(`${URL}new_transaction`, data, config);
         promise.then(res => {
             console.log(res.data);
             navigate('/home');
