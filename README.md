@@ -3,11 +3,12 @@
 Acesse a aplicação  [Clicando aqui](https://my-wallet-font.vercel.app/).
 
 ## Imagens
-
+<p float="left">
 <img style='height: 200px' src='./images/Login.png'/>
 <img style='height: 200px' src='./images/Cadastro.png'/>
 <img style='height: 200px' src='./images/Home.png'/>
 <img style='height: 200px' src='./images/Home2.png'/>
+</p>
 <br></br>
 
 ### `Nova entrada`
