@@ -98,6 +98,13 @@ div{
             padding-left: 5%;
             justify-content: flex-start;
         }
+        span{
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            color: #c6c6c6;
+            margin-left: 5px;
+        }
     }
     }
     h2{
@@ -123,6 +130,7 @@ div{
 export const P = styled.p `
     font-family: 'Raleway';
     display: flex;
+    justify-content: flex-end;
     width: 15%;
     color: ${(props) => (props.model===`date`?`#C6C6C6`: props.model===`green`?`#03AC00`:`#C70000`)};
 `;

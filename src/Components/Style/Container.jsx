@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div `
+export const Container = styled.div `
 color: white;
 position: absolute;
 top: 50%;
@@ -71,19 +71,19 @@ form{
     }
     p{
         position: relative;
-    width: 100%;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    margin-top:25px;
-    font-family: 'Lexend Deca';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13.976px;
-    line-height: 17px;
-    text-align: center;
-    text-decoration-line: underline;
-    color: white;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        margin-top:25px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13.976px;
+        line-height: 17px;
+        text-align: center;
+        text-decoration-line: underline;
+        color: white;
     }
     a{
         text-decoration: none;
@@ -103,4 +103,19 @@ form{
 }
 
 `;
-export default Container;
+export const P1 = styled.h2 `
+    position: relative;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    margin-top:25px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: with;
+    margin-top: -10px;
+    margin-bottom: 10px;
+`;
